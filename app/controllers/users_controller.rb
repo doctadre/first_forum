@@ -12,14 +12,14 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.xml
-  #def show
-   # @user = User.find(params[:id])
+  def show
+    @user = User.find(params[:id])
 
-    #respond_to do |format|
-     # format.html # show.html.erb
-      #format.xml  { render :xml => @user }
-    #end
-  #end
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @user }
+    end
+  end
  
 
   # GET /users/new
@@ -74,10 +74,10 @@ class UsersController < ApplicationController
   # DELETE /users/1.xml
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
+	@user.update_attribute(:active, false)
 
     respond_to do |format|
-      format.html { redirect_to(users_url :notice => "User '#{@user.username}' was successfully destroyed.") }
+      format.html { redirect_to(users_url, :notice => "User '#{@user.username}' was successfully deactivated.") }
       format.xml  { head :ok }
     end
   end

@@ -1,10 +1,10 @@
 Projects::Application.routes.draw do
 
-  resources :users, :except => :show
+  resources :users
 
   resources :posts, :except => :index
 
-  resources :topics, :except => :index
+  resources :topics
 
   resources :forums
 

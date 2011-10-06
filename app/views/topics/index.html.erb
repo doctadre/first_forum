@@ -1,4 +1,5 @@
-<h1>Listing topics</h1>
+<p id="notice"><%= notice %></p>
+<h1>Topics</h1>
 
 <table>
   <tr>
@@ -11,9 +12,8 @@
 
 <% @topics.each do |topic| %>
   <tr>
-    <td><%= topic.title if topic %></td>
-	<td><%= topic.user.username if topic %></td>
-    <td><%= link_to 'Show', topic %></td>
+    <td><%= link_to topic.title, topic %></td>
+	<td><%= link_to topic.user.username, topic.user if topic %></td>
     <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
     <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

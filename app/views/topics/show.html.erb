@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
-  <%= @topic.title %>
+  <h1><b>Title:</b>
+  <%= @topic.title %></h1>
 </p>
 <p>
-  <b>Created By:</b>
-  <%= link_to @topic.user.username, @topic.user if @topic %>
+  <h2><b>Created By:</b>
+  <%= link_to @topic.user.username, @topic.user if @topic %></h2>
 </p>
 
 <table>
@@ -17,7 +17,7 @@
 <% @topic.posts.each do |post| %>
 <tr>
 	<td><%= post.body if post %></td>
-	<td><%= post.user.username if post %></td>
+	<td><%= link_to post.user.username, post.user if post %></td>
 	<td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>
