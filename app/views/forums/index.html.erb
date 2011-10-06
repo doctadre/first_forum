@@ -1,8 +1,9 @@
-<h1>Listing forums</h1>
+<h1>Forums</h1>
 
 <table>
   <tr>
     <th>Title</th>
+	<th>Creator</th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,8 +11,8 @@
 
 <% @forums.each do |forum| %>
   <tr>
-    <td><%= forum.title %></td>
-    <td><%= link_to 'Show', forum %></td>
+    <td><%= link_to forum.title, forum %></td>
+	<td><%= link_to forum.user.username, forum.user if forum.user %></td>
     <td><%= link_to 'Edit', edit_forum_path(forum) %></td>
     <td><%= link_to 'Destroy', forum, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

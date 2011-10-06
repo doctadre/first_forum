@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Title</th>
+	<th>Author</th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,7 +11,8 @@
 
 <% @topics.each do |topic| %>
   <tr>
-    <td><%= topic.title %></td>
+    <td><%= topic.title if topic %></td>
+	<td><%= topic.user.username if topic %></td>
     <td><%= link_to 'Show', topic %></td>
     <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
     <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -1,14 +1,4 @@
 class TopicsController < ApplicationController
-  # GET /topics
-  # GET /topics.xml
-  def index
-    @topics = Topic.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @topics }
-    end
-  end
 
   # GET /topics/1
   # GET /topics/1.xml
@@ -44,8 +34,8 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to(@topic, :notice => 'Topic was successfully created.') }
-        format.xml  { render :xml => @topic, :status => :created, :location => @topic }
+        format.html { redirect_to(@topic.forum, :notice => "Topic '#{@topic.title}' was successfully created.") }
+        format.xml  { render :xml => @topic.forum, :status => :created, :location => @topic }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @topic.errors, :status => :unprocessable_entity }
@@ -60,7 +50,7 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.update_attributes(params[:topic])
-        format.html { redirect_to(@topic, :notice => 'Topic was successfully updated.') }
+        format.html { redirect_to(@topic.forum, :notice => "Topic '#{@topic.title}' was successfully updated.") }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -73,10 +63,12 @@ class TopicsController < ApplicationController
   # DELETE /topics/1.xml
   def destroy
     @topic = Topic.find(params[:id])
+	@temp_forum = @topic.forum
     @topic.destroy
+	
 
     respond_to do |format|
-      format.html { redirect_to(topics_url) }
+      format.html { redirect_to(@temp_forum, :notice => "Topic '#{@topic.title}' was successfully removed.") }
       format.xml  { head :ok }
     end
   end

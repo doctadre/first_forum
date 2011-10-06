@@ -1,10 +1,14 @@
 Projects::Application.routes.draw do
-  resources :posts
 
-  resources :topics
+  resources :users, :except => :show
+
+  resources :posts, :except => :index
+
+  resources :topics, :except => :index
 
   resources :forums
 
+  root :to => "forums#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,4 +1,6 @@
 class Topic < ActiveRecord::Base
 	belongs_to :forum
-	has_many :posts
+	belongs_to :user
+	validates_presence_of :title
+	has_many :posts, :dependent => :destroy
 end
