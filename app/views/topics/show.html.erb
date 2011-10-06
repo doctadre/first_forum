@@ -5,6 +5,13 @@
   <%= @topic.title %>
 </p>
 
+<table>
+<% @topic.posts.each do |post| %>
+<tr>
+	<td><%= post.body if post %></td>
+</tr>
+<% end %>
+</table>
 
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
 <%= link_to 'Back', topics_path %>

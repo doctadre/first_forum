@@ -5,6 +5,14 @@
   <%= @forum.title %>
 </p>
 
+<table>
+<% @forum.topics.each do |topic| %>
+<tr>
+	<td><%= link_to_if topic, topic.title, topic %></td>
+</tr>
+<% end %>
+</table>
+
 
 <%= link_to 'Edit', edit_forum_path(@forum) %> |
 <%= link_to 'Back', forums_path %>

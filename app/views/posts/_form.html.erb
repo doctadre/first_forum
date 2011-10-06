@@ -15,6 +15,10 @@
     <%= f.label :body %><br />
     <%= f.text_field :body %>
   </div>
+  <div class="field">
+    <%= f.label :topic_id %><br />
+    <%= f.collection_select :topic_id, Topic.all, :id, :title %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
