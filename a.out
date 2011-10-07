@@ -1,0 +1,102 @@
+2011-10-07T19:42:00+00:00 app[web.1]:   
+2011-10-07T19:42:00+00:00 app[web.1]: 
+2011-10-07T19:42:00+00:00 app[web.1]: 
+2011-10-07T19:42:00+00:00 heroku[router]: GET aharris-project3.heroku.com/stylesheets/all.css dyno=web.1 queue=0 wait=0ms service=8ms status=404 bytes=728
+2011-10-07T19:42:00+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:42:00 -0700] "GET /stylesheets/all.css HTTP/1.1" 404 728 "http://aharris-project3.heroku.com/forums/2-welcome" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:42:06+00:00 app[web.1]: 
+2011-10-07T19:42:06+00:00 app[web.1]: 
+2011-10-07T19:42:06+00:00 app[web.1]: Started GET "/forums/2-welcome" for 24.23.52.207 at 2011-10-07 12:42:06 -0700
+2011-10-07T19:42:06+00:00 app[web.1]:   Processing by ForumsController#show as HTML
+2011-10-07T19:42:06+00:00 app[web.1]:   Parameters: {"id"=>"2-welcome"}
+2011-10-07T19:42:06+00:00 app[web.1]: Rendered layouts/_footer.html.erb (0.3ms)
+2011-10-07T19:42:06+00:00 app[web.1]: Rendered forums/show.html.erb within layouts/application (3.9ms)
+2011-10-07T19:42:06+00:00 app[web.1]: Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 2.0ms)
+2011-10-07T19:42:06+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:42:06 -0700] "GET /forums/2-welcome HTTP/1.1" 200 549 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:42:06+00:00 heroku[router]: GET aharris-project3.heroku.com/forums/2-welcome dyno=web.1 queue=0 wait=0ms service=13ms status=200 bytes=1302
+2011-10-07T19:42:06+00:00 heroku[router]: GET aharris-project3.heroku.com/stylesheets/all.css dyno=web.1 queue=0 wait=0ms service=3ms status=404 bytes=728
+2011-10-07T19:42:06+00:00 app[web.1]: 
+2011-10-07T19:42:06+00:00 app[web.1]: 
+2011-10-07T19:42:06+00:00 app[web.1]: Started GET "/stylesheets/all.css" for 24.23.52.207 at 2011-10-07 12:42:06 -0700
+2011-10-07T19:42:06+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:42:06 -0700] "GET /stylesheets/all.css HTTP/1.1" 404 728 "http://aharris-project3.heroku.com/forums/2-welcome" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:42:09+00:00 app[web.1]: 
+2011-10-07T19:42:09+00:00 app[web.1]: 
+2011-10-07T19:42:09+00:00 app[web.1]: Started GET "/topics/new" for 24.23.52.207 at 2011-10-07 12:42:09 -0700
+2011-10-07T19:42:09+00:00 app[web.1]:   Processing by TopicsController#new as HTML
+2011-10-07T19:42:09+00:00 app[web.1]: Rendered topics/_form.html.erb (35.2ms)
+2011-10-07T19:42:09+00:00 app[web.1]: Rendered layouts/_footer.html.erb (0.2ms)
+2011-10-07T19:42:09+00:00 app[web.1]: Rendered topics/new.html.erb within layouts/application (37.0ms)
+2011-10-07T19:42:09+00:00 app[web.1]: Completed 200 OK in 38ms (Views: 6.8ms | ActiveRecord: 30.6ms)
+2011-10-07T19:42:0
+9+00:00 heroku[router]: GET aharris-project3.heroku.com/topics/new dyno=web.1 queue=0 wait=0ms service=43ms status=200 bytes=2046
+2011-10-07T19:42:09+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:42:09 -0700] "GET /topics/new HTTP/1.1" 200 810 "http://aharris-project3.heroku.com/forums/2-welcome" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:42:09+00:00 app[web.1]: 
+2011-10-07T19:42:09+00:00 app[web.1]: 
+2011-10-07T19:42:09+00:00 app[web.1]: Started GET "/stylesheets/all.css" for 24.23.52.207 at 2011-10-07 12:42:09 -0700
+2011-10-07T19:42:09+00:00 app[web.1]: 
+2011-10-07T19:42:09+00:00 app[web.1]: ActionController::RoutingError (No route matches "/stylesheets/all.css"):
+2011-10-07T19:42:09+00:00 app[web.1]:   
+2011-10-07T19:42:09+00:00 app[web.1]: 
+2011-10-07T19:42:09+00:00 app[web.1]: 
+2011-10-07T19:42:09+00:00 heroku[router]: GET aharris-project3.heroku.com/stylesheets/all.css dyno=web.1 queue=0 wait=0ms service=6ms status=404 bytes=728
+2011-10-07T19:42:10+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:42:09 -0700] "GET /stylesheets/all.css HTTP/1.1" 404 728 "http://aharris-project3.heroku.com/topics/new" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:42:17+00:00 heroku[router]: POST aharris-project3.heroku.com/topics dyno=web.1 queue=0 wait=0ms service=13ms status=302 bytes=117
+2011-10-07T19:42:17+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:42:17 -0700] "POST /topics HTTP/1.1" 302 128 "http://aharris-project3.heroku.com/topics/new" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:42:17+00:00 app[web.1]: Redirected to http://aharris-project3.heroku.com/forums/2-welcome
+2011-10-07T19:42:17+00:00 app[web.1]: Completed 302 Found in 5ms
+2011-10-07T19:42:17+00:00 app[web.1]: 
+2011-10-07T19:42:17+00:00 app[web.1]: 
+2011-10-07T19:42:17+00:00 app[web.1]: Started GET "/forums/2-welcome" for 24.23.52.207 at 2011-10-07 12:42:17 -0700
+2011-10-07T19:42:17+00:00 app[web.1]:   Processing by ForumsController#show as HTML
+2011-10-07T19:42:17+00:00 app[web.1]:   Parameters: {"id"=>"2-welcome"}
+2011-10-07T19:42:17+00:00 app[web.1]: Rendered forums/show.html.erb within layouts/application (4.2ms)
+2011-10-07T19:42:17+00:00 app[web.1]: Completed   in 6ms
+2011-10-07T19:42:17+00:00 app[web.1]: 
+2011-10-07T19:42:17+00:00 app[web.1]: ActionView::Template::Error (No route matches {:action=>"destroy", :controller=>"topics", :id=>#<Topic id: 2, title: "Intro", created_at: "2011-10-07 19:42:17", updated_at: "2011-10-07 19:42:17", forum_id: 2, user_id: 1>}):
+2011-10-07T19:42:17+00:00 app[web.1]:     13: </tr>
+2011-10-07T19:42:17+00:00 app[web.1]:     14: <% @forum.topics.each do |topic| %>
+2011-10-07T19:42:17+00:00 app[web.1]:     15: <tr>
+2011-10-07T19:42:17+00:00 app[web.1]:     16: 	<td><%= link_to_if topic, topic.title, topic %></td>
+2011-10-07T19:42:17+00:00 app[web.1]:     17: 	<td><%= link_to_if topic, topic.user.username, topic.user %></td>
+2011-10-07T19:42:17+00:00 app[web.1]:     18: 	<td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+2011-10-07T19:42:17+00:00 app[web.1]:     19: 	<td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
+2011-10-07T19:42:17+00:00 app[web.1]:   app/views/forums/show.html.erb:16:in `block in _app_views_forums_show_html_erb__2584609035540288634_26639420__1409044535906624494'
+2011-10-07T19:42:17+00:00 app[web.1]:   app/views/forums/show.html.erb:14:in `_app_views_forums_show_html_erb__2584609035540288634_26639420__1409044535906624494'
+2011-10-07T19:42:17+00:00 app[web.1]:   app/controllers/forums_controller.rb:18:in `show'
+2011-10-07T19:42:17+00:00 app[web.1]: 
+2011-10-07T19:42:17+00:00 app[web.1]: 
+2011-10-07T19:42:17+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:42:17 -0700] "GET /forums/2-welcome HTTP/1.1" 500 728 "http://aharris-project3.heroku.com/topics/new" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:42:17+00:00 heroku[router]: GET aharris-project3.heroku.com/forums/2-welcome dyno=web.1 queue=0 wait=0ms service=12ms
+ status=500 bytes=728
+2011-10-07T19:48:29+00:00 heroku[slugc]: Slug compilation started
+2011-10-07T19:48:41+00:00 heroku[api]: Deploy 7d1cab3 by drdre662@yahoo.com
+2011-10-07T19:48:41+00:00 heroku[api]: Release v7 created by drdre662@yahoo.com
+2011-10-07T19:48:41+00:00 heroku[web.1]: State changed from up to bouncing
+2011-10-07T19:48:41+00:00 heroku[web.1]: State changed from bouncing to created
+2011-10-07T19:48:41+00:00 heroku[web.1]: State changed from created to starting
+2011-10-07T19:48:42+00:00 heroku[slugc]: Slug compilation finished
+2011-10-07T19:48:44+00:00 heroku[web.1]: Stopping process with SIGTERM
+2011-10-07T19:48:44+00:00 app[web.1]: >> Stopping ...
+2011-10-07T19:48:51+00:00 heroku[web.1]: State changed from starting to up
+2011-10-07T19:49:10+00:00 heroku[rake.4]: State changed from created to starting
+2011-10-07T19:49:11+00:00 app[rake.4]: Awaiting client
+2011-10-07T19:49:11+00:00 app[rake.4]: Starting process with command `bundle exec rake db:migrate`
+2011-10-07T19:49:12+00:00 heroku[rake.4]: State changed from starting to up
+2011-10-07T19:49:14+00:00 heroku[rake.4]: Process exited
+2011-10-07T19:49:15+00:00 heroku[rake.4]: State changed from up to complete
+2011-10-07T19:49:28+00:00 heroku[router]: GET aharris-project3.heroku.com/ dyno=web.1 queue=0 wait=0ms service=196ms status=200 bytes=1576
+2011-10-07T19:49:28+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:49:28 -0700] "GET / HTTP/1.1" 200 694 "-" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:49:28+00:00 heroku[router]: GET aharris-project3.heroku.com/stylesheets/scaffold.css dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=1201
+2011-10-07T19:49:28+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:49:28 -0700] "GET /stylesheets/scaffold.css?1318016910 HTTP/1.1" 200 508 "http://aharris-project3.heroku.com/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:49:28+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:49:28 -0700] "GET /stylesheets/all.css HTTP/1.1" 404 728 "http://aharris-project3.heroku.com/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:49:28+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:49:28 -0700] "GET /javascripts/prototype.js?1318016910 HTTP/1.1" 200 38872 "http://aharris-project3.heroku.com/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:49:28+00:00 heroku[router]: GET aharris-project3.heroku.com/stylesheets/all.css dyno=web.1 queue=0 wait=0ms service=13ms status=404 bytes=728
+2011-10-07T19:49:28+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:49:28 -0700] "GET /javascripts/effects.js?1318016910 HTTP/1.1" 200 9101 "http://aharris-project3.heroku.com/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:49:28+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:49:28 -0700] "GET /javascripts/dragdrop.js?1318016910 HTTP/1.1" 200 8013 "http://aharris-project3.heroku.com/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:49:29+00:00 heroku[router]: GET aharris-project3.heroku.com/javascripts/controls.js dyno=web.1 queue=0 wait=0ms service=11ms status=200 bytes=34787
+2011-10-07T19:49:29+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:49:29 -0700] "GET /javascripts/controls.js?1318016910 HTTP/1.1" 200 9401 "http://aharris-project3.heroku.com/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:49:29+00:00 heroku[router]: GET aharris-project3.heroku.com/javascripts/rails.js dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=5850
+2011-10-07T19:49:29+00:00 heroku[router]: GET aharris-project3.heroku.com/javascripts/application.js dyno=web.1 queue=0 wait=0ms service=2ms status=200 bytes=148
+2011-10-07T19:49:29+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:49:29 -0700] "GET /javascripts/rails.js?1318016910 HTTP/1.1" 200 1851 "http://aharris-project3.heroku.com/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:49:29+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:49:29 -0700] "GET /javascripts/application.js?1318016910 HTTP/1.1" 200 148 "http://aharris-project3.heroku.com/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:49:32+00:00 heroku[nginx]: 24.23.52.207 - - [07/Oct/2011:12:49:32 -0700] "GET /forums/2-welcome HTTP/1.1" 500 728 "http://aharris-project3.heroku.com/" "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1" aharris-project3.heroku.com
+2011-10-07T19:49:32+00:00 heroku[router]: GET aharris-project3.heroku.com/forums/2-welcome dyno=web.1 queue=0 wait=0ms service=76ms status=500 bytes=728
