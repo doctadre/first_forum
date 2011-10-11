@@ -13,14 +13,14 @@
 </tr>
 <% @forum.topics.each do |topic| %>
 <tr>
-	<td><%= link_to_if topic, topic.title, topic %></td>
+	<td><%= link_to topic.title, [@forum, topic] %></td>
 	<td><%= link_to_if topic, topic.user.username, topic.user %></td>
-	<td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-	<td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
+	<td><%= link_to 'Edit', edit_forum_topic_path(@forum, topic) %></td>
+	<td><%= link_to 'Destroy', [@forum, topic], :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>
 <% end %>
 </table>
 
-<%= link_to 'New Topic', new_topic_path %> |
+<%= link_to 'New Topic', new_forum_topic_path(@forum) %> |
 <%= link_to 'Edit', edit_forum_path(@forum) %> |
 <%= link_to 'Back', forums_path %>

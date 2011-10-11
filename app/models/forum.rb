@@ -4,10 +4,7 @@ class Forum < ActiveRecord::Base
 	
 	validates_presence_of :title
 	
-	def to_param
-    "#{id}-#{title.parameterize}"
-  end
-  
+
   def to_s
     title
   end

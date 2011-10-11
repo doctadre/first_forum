@@ -73,10 +73,11 @@ class ForumsController < ApplicationController
   # DELETE /forums/1.xml
   def destroy
     @forum = Forum.find(params[:id])
+	@tmp_forum = @forum
     @forum.destroy
 
     respond_to do |format|
-      format.html { redirect_to(forums_url, :notice => "Forum '#{@forum.title}' was successfully removed.") }
+      format.html { redirect_to(forums_url, :notice => "Forum '#{@tmp_forum.title}' was successfully removed.") }
       format.xml  { head :ok }
     end
   end

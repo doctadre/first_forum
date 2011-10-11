@@ -24,7 +24,8 @@ class TopicsController < ApplicationController
   # GET /topics/new
   # GET /topics/new.xml
   def new
-    @topic = Topic.new
+    @forum = Forum.find(params[:forum_id])
+    @topic = @forum.topics.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,17 +35,19 @@ class TopicsController < ApplicationController
 
   # GET /topics/1/edit
   def edit
-    @topic = Topic.find(params[:id])
+    @forum = Forum.find(params[:forum_id])
+    @topic = @forum.topics.find(params[:id])
   end
 
   # POST /topics
   # POST /topics.xml
   def create
+	@forum = Forum.find(params[:forum_id])
     @topic = Topic.new(params[:topic])
 
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to(@topic.forum, :notice => "Topic '#{@topic.title}' was successfully created.") }
+        format.html { redirect_to(@forum, :notice => "Topic '#{@topic.title}' was successfully created with id #{@topic.forum_id}.") }
         format.xml  { render :xml => @topic.forum, :status => :created, :location => @topic }
       else
         format.html { render :action => "new" }
@@ -56,7 +59,8 @@ class TopicsController < ApplicationController
   # PUT /topics/1
   # PUT /topics/1.xml
   def update
-    @topic = Topic.find(params[:id])
+	@forum = Forum.find(params[:forum_id])
+	@topic = @forum.topics.find(params[:id])
 
     respond_to do |format|
       if @topic.update_attributes(params[:topic])
@@ -72,7 +76,8 @@ class TopicsController < ApplicationController
   # DELETE /topics/1
   # DELETE /topics/1.xml
   def destroy
-    @topic = Topic.find(params[:id])
+	@forum = Forum.find(params[:forum_id])
+    @topic = @forum.topics.find(params[:id])
 	@temp_forum = @topic.forum
     @topic.destroy
 	
