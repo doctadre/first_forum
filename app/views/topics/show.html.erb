@@ -16,13 +16,13 @@
 </tr>
 <% @topic.posts.each do |post| %>
 <tr>
-	<td><%= post.body if post %></td>
-	<td><%= link_to post.user.username, post.user if post %></td>
-	<td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+	<td><%= post.body%></td>
+	<td><%= link_to post.user.username, post.user%></td>
+	<td><%= link_to 'Edit', edit_forum_topic_post_path(@topic.forum, @topic, post) %></td>
+    <td><%= link_to 'Destroy', [@topic.forum, @topic, post], :confirm => 'Are you sure?', :method => :delete %></td>
 </tr>
 <% end %>
 </table>
-<%= link_to 'New Post', new_post_path %> |
+<%= link_to 'New Post', new_forum_topic_post_path(@topic.forum, @topic) %> |
 <%= link_to 'Edit', edit_forum_topic_path(@topic.forum, @topic) %> |
 <%= link_to 'Back to Forum', @topic.forum %>

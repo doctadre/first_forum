@@ -1,19 +1,11 @@
 class PostsController < ApplicationController
-  # GET /posts/1
-  # GET /posts/1.xml
-  def show
-    @post = Post.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @post }
-    end
-  end
 
   # GET /posts/new
   # GET /posts/new.xml
   def new
-    @post = Post.new
+    @forum = Forum.find(params[:forum_id])
+    @topic = @forum.topics.find(params[:topic_id])
+	@post = @topic.posts.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -23,17 +15,21 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
+	@forum = Forum.find(params[:forum_id])
+    @topic = @forum.topics.find(params[:topic_id])
+    @post = Post.new(params[:post])
   end
 
   # POST /posts
   # POST /posts.xml
   def create
+	@forum = Forum.find(params[:forum_id])
+    @topic = @forum.topics.find(params[:topic_id])
     @post = Post.new(params[:post])
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to(@post.topic, :notice => "Post was successfully created.") }
+        format.html { redirect_to(forum_topic_path(@forum, @topic), :notice => "Post was successfully created.") }
         format.xml  { render :xml => @post, :status => :created, :location => @post }
       else
         format.html { render :action => "new" }
@@ -45,11 +41,13 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.xml
   def update
-    @post = Post.find(params[:id])
+	@forum = Forum.find(params[:forum_id])
+    @topic = @forum.topics.find(params[:topic_id])
+    @post = @topic.posts.find(params[:post_id])
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to(@post.topic, :notice => "Post was successfully updated.") }
+        format.html { redirect_to(forum_topic_path(@forum, @topic), :notice => "Post was successfully updated.") }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -61,12 +59,13 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.xml
   def destroy
+	@forum = Forum.find(params[:forum_id])
     @post = Post.find(params[:id])
-	@topic_temp = @post.topic
+	@topic = @post.topic
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to(@topic_temp, :notice => "Post was successfully removed.") }
+      format.html { redirect_to(forum_topic_path(@forum, @topic), :notice => "Post was successfully removed.") }
       format.xml  { head :ok }
     end
   end
