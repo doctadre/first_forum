@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   # GET /posts/new
   # GET /posts/new.xml
   def new
@@ -17,7 +16,7 @@ class PostsController < ApplicationController
   def edit
 	@forum = Forum.find(params[:forum_id])
     @topic = @forum.topics.find(params[:topic_id])
-    @post = Post.new(params[:post])
+    @post = @topic.posts.find(params[:id])
   end
 
   # POST /posts
@@ -43,7 +42,7 @@ class PostsController < ApplicationController
   def update
 	@forum = Forum.find(params[:forum_id])
     @topic = @forum.topics.find(params[:topic_id])
-    @post = @topic.posts.find(params[:post_id])
+    @post = @topic.posts.find(params[:id])
 
     respond_to do |format|
       if @post.update_attributes(params[:post])

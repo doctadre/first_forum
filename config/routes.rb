@@ -1,11 +1,17 @@
 Projects::Application.routes.draw do
 
+  resources :sessions, :only => [:new, :create, :destory]
+  
   resources :users
   resources :forums do
 	resources :topics do
 		resources :posts
 	end
   end	
+  
+  match '/signup' , :to => 'users#new'
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
   
   
   root :to => "forums#index"

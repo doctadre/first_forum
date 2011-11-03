@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
 
+	
   def show
     @topic = Topic.find(params[:id])
 
@@ -75,4 +76,6 @@ class TopicsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  
 end

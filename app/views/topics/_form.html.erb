@@ -16,10 +16,7 @@
     <%= f.text_field :title %>
   </div>
   <%= f.hidden_field :forum_id, :value => @forum.id %>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.collection_select :user_id, User.active, :id, :username %>
-  </div>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -15,10 +15,7 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label "Created By:" %><br />
-    <%= f.collection_select :user_id, User.active, :id, :username %>
-  </div>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
   <div class="actions">
     <%= f.submit %>
   </div>
